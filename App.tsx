@@ -10,7 +10,7 @@ import Portfolio from './sections/Portfolio';
 import Testimonials from './sections/Testimonials';
 import FAQ from './sections/FAQ';
 import Contact from './sections/Contact';
-import QuoteAssistant from './components/QuoteAssistant';
+
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,12 +26,12 @@ const App: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar isScrolled={isScrolled} />
-      
+
       <main className="flex-grow">
         <section id="home">
           <Hero />
         </section>
-        
+
         <section id="services" className="py-20 bg-white">
           <Services />
         </section>
@@ -62,9 +62,6 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
-      
-      {/* AI Floating Quote Assistant */}
-      <QuoteAssistant />
     </div>
   );
 };
