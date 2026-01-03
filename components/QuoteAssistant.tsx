@@ -1,10 +1,9 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { getSmartQuoteAdvice } from '../geminiService';
 
 const QuoteAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<{role: 'user' | 'bot', text: string}[]>([
+  const [messages, setMessages] = useState<{ role: 'user' | 'bot', text: string }[]>([
     { role: 'bot', text: "Hello! I'm the BirdBarrier AI Assistant. Describe your bird problem (e.g., 'pigeons on my balcony') and I'll suggest the best solution!" }
   ]);
   const [input, setInput] = useState('');
@@ -26,7 +25,7 @@ const QuoteAssistant: React.FC = () => {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
-    const botResponse = await getSmartQuoteAdvice(userMsg);
+    const botResponse = "Hello! I'm the BirdBarrier AI Assistant. Describe your bird problem (e.g., 'pigeons on my balcony') and I'll suggest the best solution!";
     setMessages(prev => [...prev, { role: 'bot', text: botResponse || "I missed that, can you say it again?" }]);
     setIsLoading(false);
   };
@@ -74,7 +73,7 @@ const QuoteAssistant: React.FC = () => {
           {/* Input */}
           <form onSubmit={handleSubmit} className="p-3 border-t bg-white">
             <div className="relative flex items-center">
-              <input 
+              <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about bird solutions..."
@@ -89,7 +88,7 @@ const QuoteAssistant: React.FC = () => {
       )}
 
       {/* Trigger Button */}
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-16 h-16 rounded-full bg-secondary text-white shadow-2xl shadow-secondary/40 flex items-center justify-center group hover:scale-110 active:scale-95 transition-all duration-300 relative"
       >

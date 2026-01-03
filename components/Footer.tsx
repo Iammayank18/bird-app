@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-4 text-white/70">
               <p className="flex items-start gap-3">
                 <span className="material-symbols-outlined text-secondary">location_on</span>
-                Shop No. 42, Bandra West,<br/>Mumbai, MH 400050
+                Shop No. 42, Bandra West,<br />Mumbai, MH 400050
               </p>
               <p className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-secondary">call</span>
